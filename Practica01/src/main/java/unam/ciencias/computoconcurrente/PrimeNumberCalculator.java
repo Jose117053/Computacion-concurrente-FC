@@ -5,7 +5,7 @@ public class PrimeNumberCalculator implements Runnable {
     private int numero;
     private int inicioSegmento;
     private int finalSegmento;
-    private boolean resultado;
+    private static boolean resultado;
 
     public PrimeNumberCalculator() {
         this.threads = 1;
@@ -24,7 +24,13 @@ public class PrimeNumberCalculator implements Runnable {
     @Override
     public void run() {
         //Aqui va tu codigo
-        return;
+        for(int i=inicioSegmento; i < finalSegmento; i++) {
+            if (numero % i == 0) {
+                this.resultado=false;
+             //   System.out.println("aqui detecto que no es un numero primo, debe de decir false, dice: " + resultado);
+                return;
+            }
+        }
     }
 
     /**
@@ -34,8 +40,38 @@ public class PrimeNumberCalculator implements Runnable {
     * @return Si es primo o no es primo.
     */
     public boolean isPrime(int n) throws InterruptedException {
+        if(n<2)
+            return false;
         //Aqui va tu codigo
-        return true;
+        Thread[] hilos=new Thread[threads];
+        int intervalo= n/threads;
+        finalSegmento=intervalo;
+        inicioSegmento=2;
+        numero=n;
+        resultado=true;
+        for(int i=0; i<threads;i++){
+
+            if(i !=threads -1) {
+                Runnable runnable = new PrimeNumberCalculator(numero, inicioSegmento, finalSegmento);
+                hilos[i] = new Thread(runnable);
+                hilos[i].start();
+                inicioSegmento = finalSegmento;
+                finalSegmento += intervalo;
+            }else{
+                Runnable runnable = new PrimeNumberCalculator(numero, inicioSegmento, numero);
+                hilos[i] = new Thread(runnable);
+                hilos[i].start();
+            }
+
+        }
+
+        for(int i=0; i<threads;i++)
+            hilos[i].join();
+
+
+       // System.out.println(resultado);
+
+        return resultado;
     }
 
 }
