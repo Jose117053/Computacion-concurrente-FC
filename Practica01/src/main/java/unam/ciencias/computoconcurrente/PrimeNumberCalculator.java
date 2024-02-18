@@ -21,13 +21,21 @@ public class PrimeNumberCalculator implements Runnable {
         this.finalSegmento = finalSegmento;
     }
 
+    /**
+     * Dado un rango de numeros diferente para cada hilo
+     * se comprueba que el numero de referencia no sea multiplo
+     * de algun numero dentro del rango.
+     * */
     @Override
     public void run() {
-        for(int i=inicioSegmento; i < finalSegmento; i++)
+        for(int i=inicioSegmento; i < finalSegmento; i++) {
+            if(!resultado)//cuando algun hilo detecta que no es primo ya no tiene caso que los demas hilos verifiquen su rango de numeros
+                return;    //Hay una mayor diferencia en numeros bastante grnades
             if (numero % i == 0) {
-                resultado=false;
+                resultado = false;
                 return;
             }
+        }
 
     }
 
