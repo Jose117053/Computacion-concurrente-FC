@@ -40,6 +40,7 @@ class MatrixUtilsTest {
                 {1, 1, 1},
                 {1, 1, 1}
         };
+        System.out.println("ESTO ES DEL TEST DE 1 "+matrixUtils.findAverage(matrix));
         assertEquals(1, matrixUtils.findAverage(matrix));
     }
 
