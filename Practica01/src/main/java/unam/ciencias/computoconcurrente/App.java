@@ -1,12 +1,9 @@
 package unam.ciencias.computoconcurrente;
 
 public class App {
-public static void sop(Object o){
-    System.out.println(o);
-}
+
     public static void main(String[] a) throws InterruptedException {
         // Numeros primos secuencial
-
         long iniSec = System.currentTimeMillis();
         PrimeNumberCalculator secuencial = new PrimeNumberCalculator(1);
         secuencial.isPrime(104543);
@@ -24,26 +21,24 @@ public static void sop(Object o){
         System.out.println("El tiempo en el algoritmo secuencial tarda: " + tiempo01);
         System.out.println("El tiempo en el algoritmo paralelo tarda: " + tiempo02);
 
-
-
         int[][] matrix = {
-                {4, 29, -6, 0},//27
-                {15, 6, 0, 4},//25
-                {25, 41, -10, 4},//60
-                {0, 0, -1, 39}, //38
+                {4, 29, -6, 0},
+                {15, 6, 0, 4},
+                {25, 41, -10, 4},
+                {0, 0, -1, 39},
         };
 
         // Promedio matriz secuencial
         long iniSec2 = System.currentTimeMillis();
         MatrixUtils secuencial2 = new MatrixUtils();
-        sop(secuencial2.findAverage(matrix));
+        secuencial2.findAverage(matrix);
         long finSec2 = System.currentTimeMillis();
         long tiempo011 = finSec2 - iniSec2;
 
         // Promedio matriz paralelo/concurrente
         long iniPar2 = System.currentTimeMillis();
         MatrixUtils paralelo2 = new MatrixUtils(4);
-        sop(paralelo2.findAverage(matrix));
+        paralelo2.findAverage(matrix);
         long finPar2 = System.currentTimeMillis();
         long tiempo022 = finPar2 - iniPar2;
 
@@ -55,4 +50,3 @@ public static void sop(Object o){
 
     }
 }
-
