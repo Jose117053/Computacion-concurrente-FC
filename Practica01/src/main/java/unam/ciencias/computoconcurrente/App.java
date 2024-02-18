@@ -27,23 +27,23 @@ public class App {
 
 
         int[][] matrix = {
-                {4, 29, -6, 0},//6.75
-                {15, 6, 0, 4}, //6.25
-                {25, 41, -10, 4}, //15
-                {0, 0, -1, 39}, //promedio de 9.5 en esta matriz
+                {4, 29, -6, 0},
+                {15, 6, 0, 4},
+                {25, 41, -10, 4},
+                {0, 0, -1, 39},
         };
 
         // Promedio matriz secuencial
         long iniSec2 = System.currentTimeMillis();
         MatrixUtils secuencial2 = new MatrixUtils();
-        secuencial2.findAverage(matrix);
+        sop(secuencial2.findAverage(matrix));
         long finSec2 = System.currentTimeMillis();
         long tiempo011 = finSec2 - iniSec2;
 
         // Promedio matriz paralelo/concurrente
         long iniPar2 = System.currentTimeMillis();
-        MatrixUtils paralelo2 = new MatrixUtils(4);
-        paralelo2.findAverage(matrix);
+        MatrixUtils paralelo2 = new MatrixUtils(2);
+        sop(paralelo2.findAverage(matrix));
         long finPar2 = System.currentTimeMillis();
         long tiempo022 = finPar2 - iniPar2;
 
