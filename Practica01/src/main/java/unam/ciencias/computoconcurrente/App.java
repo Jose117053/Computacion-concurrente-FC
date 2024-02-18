@@ -1,5 +1,4 @@
 package unam.ciencias.computoconcurrente;
-
 public class App {
 
     public static void main(String[] a) throws InterruptedException {
@@ -25,9 +24,9 @@ public class App {
 
          */
         int[][] matrix = {
-                {4, 29, -6, 0},
-                {15, 6, 0, 4},
-                {25, 41, -10, 4},
+                {4, 29, -6, 0},//6.75
+                {15, 6, 0, 4}, //6.25
+                {25, 41, -10, 4}, //15
                 {0, 0, -1, 39}, //promedio de 9.5 en esta matriz
         };
 
