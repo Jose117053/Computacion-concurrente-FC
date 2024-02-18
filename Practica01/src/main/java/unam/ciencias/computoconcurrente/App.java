@@ -1,9 +1,12 @@
 package unam.ciencias.computoconcurrente;
 public class App {
+    public static void sop(Object aver){
+        System.out.println(aver);
+    }
 
     public static void main(String[] a) throws InterruptedException {
         // Numeros primos secuencial
-        /*
+
         long iniSec = System.currentTimeMillis();
         PrimeNumberCalculator secuencial = new PrimeNumberCalculator(1);
         secuencial.isPrime(104543);
@@ -22,7 +25,7 @@ public class App {
         System.out.println("El tiempo en el algoritmo paralelo tarda: " + tiempo02);
 
 
-         */
+
         int[][] matrix = {
                 {4, 29, -6, 0},//6.75
                 {15, 6, 0, 4}, //6.25

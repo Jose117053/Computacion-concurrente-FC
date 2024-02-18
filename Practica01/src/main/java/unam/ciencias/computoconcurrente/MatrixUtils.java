@@ -44,41 +44,62 @@ public class MatrixUtils implements Runnable {
 
 
         //Aqui va tu codigo
-        Thread[] hilos= new Thread[4];
-      //  System.out.println(hilos.length + "hilos length");
+        Thread[] hilos = new Thread[4];
+        //  System.out.println(hilos.length + "hilos length");
         //System.out.println(matrix.length + "matriz length");
-        int rango=  matrix.length/4;
+        int rango = matrix.length / 4;
+        int inicio = 0;
+        int fin = rango;
 
-        listaPromedios=new ArrayList<Double>();
-        for(int i=0; i < 4;i++){
-            matrizDividida=matrix[i];
-            Runnable runnable=new MatrixUtils(matrizDividida);
-            hilos[i] = new Thread(runnable);
-            hilos[i].start();
+
+        listaPromedios = new ArrayList<Double>();
+        for (int i = 0; i < threads; i++) {
+            if (i != threads - 1) {
+                for (int j = inicio; j < fin; j++) {
+                   // System.out.println(fin + " fin");
+                  //  System.out.println("ejecucion " + j);
+                    matrizDividida = matrix[j];
+                    Runnable runnable = new MatrixUtils(matrizDividida);
+                    hilos[i] = new Thread(runnable);
+                    hilos[i].start();
+                }
+            } else {
+                for (int j = inicio; j < matrix.length; j++) {
+                    matrizDividida = matrix[j];
+                    Runnable runnable = new MatrixUtils(matrizDividida);
+                    hilos[i] = new Thread(runnable);
+                    hilos[i].start();
+                }
+
+
+            }
+            inicio = fin;
+            fin += rango;
         }
 
-        try {
-            for (int i = 0; i < 4; i++)
-                hilos[i].join();
-        }catch (Exception e){
+            try {
+                for (int m = 0; m < 4; m++)
+                    hilos[m].join();
+            } catch (Exception e) {
 
-        }
-
-
-        double sumafinal=0;
-
-        System.out.println(listaPromedios.toString() + " promedios lista");
-        for(double i: listaPromedios) {
-
-            sumafinal += i;
-
-        }
+            }
 
 
-        sumafinal /=listaPromedios.size();
+            double sumafinal = 0;
 
-        System.out.println(sumafinal+ "ESTA ES LA SUMA FINAL SE SUOPNE");
-        return sumafinal;
+          //  System.out.println(listaPromedios.toString() + " promedios lista");
+            for (double p : listaPromedios) {
+
+                sumafinal += p;
+
+            }
+
+
+            sumafinal /= listaPromedios.size();
+
+            //   System.out.println(sumafinal+ "ESTA ES LA SUMA FINAL SE SUOPNE");
+            return sumafinal;
+
 
     }
 

@@ -51,7 +51,7 @@ public class PrimeNumberCalculator implements Runnable {
         resultado=true;
         for(int i=0; i<threads;i++){
 
-            if(i !=threads -1) {
+            if(i !=threads -1) { //si el numero es impar y dan un numero par de threads, el ultimo se encargara de un poco mas de numeros
                 Runnable runnable = new PrimeNumberCalculator(numero, inicioSegmento, finalSegmento);
                 hilos[i] = new Thread(runnable);
                 hilos[i].start();
