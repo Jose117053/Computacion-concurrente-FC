@@ -1,4 +1,4 @@
-# Práctica 3: El problema de los Filósofos
+# Práctica 3: Semáforos - El problema de los Filósofos
 
 La práctica 3 se centra en resolver un problema de concurrencia de recursos, evitando los problemas de inanición (hambruna) y exclusión mutua. El objetivo de esta práctica es implementar una solución a un problema clásico de sincronización mediante el uso de semáforos y subprocesos (hilos).
 
