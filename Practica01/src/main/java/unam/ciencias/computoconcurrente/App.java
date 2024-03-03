@@ -22,10 +22,10 @@ public class App {
         System.out.println("El tiempo en el algoritmo paralelo tarda: " + tiempo02);
 
         int[][] matrix = {
-            {4, 29, -6, 0},
-            {15, 6, 0, 4},
-            {25, 41, -10, 4},
-            {0, 0, -1, 39},
+                {4, 29, -6, 0},
+                {15, 6, 0, 4},
+                {25, 41, -10, 4},
+                {0, 0, -1, 39},
         };
 
         // Promedio matriz secuencial
@@ -35,7 +35,7 @@ public class App {
         long finSec2 = System.currentTimeMillis();
         long tiempo011 = finSec2 - iniSec2;
 
-        // Promedio matriz paralelo/concurrente        
+        // Promedio matriz paralelo/concurrente
         long iniPar2 = System.currentTimeMillis();
         MatrixUtils paralelo2 = new MatrixUtils(4);
         paralelo2.findAverage(matrix);

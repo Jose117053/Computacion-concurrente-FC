@@ -47,12 +47,14 @@ class MatrixUtilsTest {
     void findaverageConcurrent2() throws InterruptedException{
         matrixUtils = new MatrixUtils(2);
         int[][] matrix = {
-            {1, 1, 1},
-            {1, 1, 1},
-            {1, 1, 1}
-    };
+                {1, 1, 1},
+                {1, 1, 1},
+                {1, 1, 1}
+        };
         assertEquals(1, matrixUtils.findAverage(matrix));
     }
 }
+
+
 
     

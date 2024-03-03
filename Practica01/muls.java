@@ -29,7 +29,7 @@ class HelperThreads extends MyObject {
 
    public static void main(String[] args) {
 
-      // parse command line arguments, if any, to override defaults
+      // parse command line aaprguments, if any, to override defaults
       GetOpt go = new GetOpt(args, "Uh:n:R:");
       go.optErr = true;
       String usage = "Usage: -h numHelpers -n napTime -R runTime";
@@ -71,8 +71,8 @@ class HelperThreads extends MyObject {
       nap(runTime*1000);
       System.out.println("age()=" + age()
          + ", time to stop the threads and exit");
-      for (int i = 0; i < numHelpers; i++)
-	  helper[i].stop();
+      //for (int i = 0; i < numHelpers; i++)
+	 // helper[i].stop();
       System.exit(0);
    }
 }
