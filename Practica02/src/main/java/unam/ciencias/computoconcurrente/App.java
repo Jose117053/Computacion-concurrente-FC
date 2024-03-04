@@ -3,19 +3,20 @@ package unam.ciencias.computoconcurrente;
 public class App {
     public static void main(String[] args) {
         // Crear buffer compartido
-        Buffer buffer = new Buffer();
+        Recepcionista buffer = new Recepcionista();
 
         // Número de productores y consumidores
         int numProductores = 4;
         int numConsumidores = 3;
 
         // Crear arreglos de productores y consumidores
-        Productor[] productores = new Productor[numProductores];
+        Pastelero[] productores = new Pastelero[numProductores];
         Consumidor[] consumidores = new Consumidor[numConsumidores];
 
         // Inicializar productores
+
         for (int i = 0; i < numProductores; i++) {
-            productores[i] = new Productor(buffer);
+            productores[i] = new Pastelero(buffer);
             new Thread(productores[i]).start();
         }
 
@@ -24,6 +25,9 @@ public class App {
             consumidores[i] = new Consumidor(buffer);
             new Thread(consumidores[i]).start();
         }
+
+
+
     }
 }
 

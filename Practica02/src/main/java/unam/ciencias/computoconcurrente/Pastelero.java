@@ -1,11 +1,11 @@
 package unam.ciencias.computoconcurrente;
 
-class Consumidor implements Runnable {//no debe consumir si el bufeer compartido está vacio
+class Pastelero implements Runnable {//no debe producir si el buffer está lleno
     private Recepcionista buffer;
     private static int idCounter = 0;
     private int id;
 
-    public Consumidor(Recepcionista buffer) {
+    public Pastelero(Recepcionista buffer) {
         this.buffer = buffer;
         this.id = idCounter++;
     }
@@ -13,10 +13,12 @@ class Consumidor implements Runnable {//no debe consumir si el bufeer compartido
     public void run() {
         //Aqui va tu codigo
         try {
-            buffer.consumir(id);
+
+            buffer.producir(id);
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
