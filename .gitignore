@@ -15,6 +15,9 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+#IntellijIdea
+Practica01/.idea/
+.idea
 
 # Compiled class file
 *.class

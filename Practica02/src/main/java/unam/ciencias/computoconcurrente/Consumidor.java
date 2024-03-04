@@ -1,6 +1,6 @@
 package unam.ciencias.computoconcurrente;
 
-class Consumidor implements Runnable {
+class Consumidor implements Runnable {//no debe consumir si el bufeer compartido está vacio
     private Buffer buffer;
     private static int idCounter = 0;
     private int id;

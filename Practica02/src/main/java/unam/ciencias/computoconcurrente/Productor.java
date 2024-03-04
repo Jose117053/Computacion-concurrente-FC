@@ -1,6 +1,6 @@
 package unam.ciencias.computoconcurrente;
 
-class Productor implements Runnable {
+class Productor implements Runnable {//no debe producir si el buffer está lleno
     private Buffer buffer;
     private static int idCounter = 0;
     private int id;
@@ -12,5 +12,6 @@ class Productor implements Runnable {
 
     public void run() {
         //Aqui va tu codigo
+
     }
 }

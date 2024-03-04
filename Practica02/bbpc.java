@@ -101,8 +101,8 @@ class ProducerConsumer extends MyObject {
       nap(runTime*1000);
       System.out.println("age()=" + age()
          + ", time to stop the threads and exit");
-      producer.stop();
-      consumer.stop();
+      //producer.stop();
+    //  consumer.stop();
       System.exit(0);
    }
 }
