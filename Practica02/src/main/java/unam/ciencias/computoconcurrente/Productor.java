@@ -1,11 +1,11 @@
 package unam.ciencias.computoconcurrente;
 
-class Pastelero implements Runnable {//no debe producir si el buffer está lleno
-    private Recepcionista buffer;
+class Productor implements Runnable {//no debe producir si el buffer está lleno
+    private Buffer buffer;
     private static int idCounter = 0;
     private int id;
 
-    public Pastelero(Recepcionista buffer) {
+    public Productor(Buffer buffer) {
         this.buffer = buffer;
         this.id = idCounter++;
     }
