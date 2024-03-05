@@ -16,7 +16,7 @@ Se pueden utilizar las bibliotecas de hilos y semáforos de Java, pero se otorga
 
 ## Entregables
 
-Es necesario presentar `3` archivos para la entrega: `2` archivos Java, `Filosofo.java` y `App.java`; una captura de pantalla que evidencie la ejecución exitosa de los archivos `dpdr.java` y `dphi.java`. Adicionalmente, se solicita incluir en un comentario privado los nombres de los integrantes del equipo.
+Es necesario presentar `2` archivos para la entrega: `1` archivo Java `Filosofo.java` y una captura de pantalla que evidencie la ejecución exitosa de los archivos `dpdr.java` y `dphi.java`. Adicionalmente, se solicita incluir en un comentario privado los nombres de los integrantes del equipo.
 
 - Se permite la importación de las bibliotecas necesarias para llevar a cabo la práctica.
 - Los participantes pueden crear todos los métodos auxiliares, atributos, etc., que sean necesarios para completar la práctica.
