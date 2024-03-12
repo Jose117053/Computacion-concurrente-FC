@@ -3,12 +3,12 @@ package unam.ciencias.computoconcurrente;
 public class App {
     static int numProductores;
     static int numConsumidores;
-    public static void main(String[] args) {
+    public static void main(String[] args) { //calif 11/10
         // Crear buffer compartido
         Buffer buffer = new Buffer();
 
         // Número de productores y consumidores
-        numProductores = 5;
+        numProductores = 6;
         numConsumidores = 3;
 
         // Crear arreglos de productores y consumidores
