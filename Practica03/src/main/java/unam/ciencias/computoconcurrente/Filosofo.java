@@ -1,26 +1,36 @@
 package unam.ciencias.computoconcurrente;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * Cada filósofo se ejecuta en un hilo.
  */
 public class Filosofo implements Runnable {
 
     private int id;
-    //Aqui va tu codigo
+    private Semaphore palilloIzquierdo, palilloDerecho;
+    private boolean haComido;
 
-    /**
-     * Constructor de la clase Filosofo. 
-     */
-    public Filosofo() {
-        //Aqui va tu codigo
+    public Filosofo(int id, Semaphore palilloIzquierdo, Semaphore palilloDerecho) {
+        this.id = id;
+        this.palilloIzquierdo = palilloIzquierdo;
+        this.palilloDerecho = palilloDerecho;
+        this.haComido = false;
     }
 
-    /**
-    * Metodo run ...
-    */
-    @Override
     public void run() {
         //Aqui va tu codigo
     }
 
+    private void pensar() throws InterruptedException {
+        //Aqui va tu codigo
+    }
+
+    private void comer() throws InterruptedException {
+        //Aqui va tu codigo
+    }
+
+    public boolean haComido() {
+        return haComido;
+    }
 }
