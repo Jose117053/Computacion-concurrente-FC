@@ -8,8 +8,8 @@ public class App {
         Buffer buffer = new Buffer();
 
         // Número de productores y consumidores
-        numProductores = 6;
-        numConsumidores = 3;
+        numProductores = 10;
+        numConsumidores = 20;
 
         // Crear arreglos de productores y consumidores
         Productor[] productores = new Productor[numProductores];
