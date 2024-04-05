@@ -11,6 +11,6 @@ class Productor implements Runnable {
     }
 
     public void run() {
-        //Aqui va tu codigo
+        buffer.producir(id);
     }
 }

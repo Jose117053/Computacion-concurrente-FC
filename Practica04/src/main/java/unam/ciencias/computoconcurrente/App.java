@@ -6,7 +6,7 @@ public class App {
         Buffer buffer = new Buffer();
 
         // Número de productores y consumidores
-        int numProductores = 4;
+        int numProductores = 6;
         int numConsumidores = 3;
 
         // Crear arreglos de productores y consumidores
@@ -24,7 +24,11 @@ public class App {
             consumidores[i] = new Consumidor(buffer);
             new Thread(consumidores[i]).start();
         }
+        
     }
+    
+    
+
 }
 
 /*

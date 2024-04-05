@@ -11,6 +11,6 @@ class Consumidor implements Runnable {
     }
 
     public void run() {
-        //Aqui va tu codigo
+        buffer.consumir(id);
     }
 }
