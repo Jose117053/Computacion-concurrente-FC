@@ -5,16 +5,16 @@ import java.util.Random;
 
 class Buffer {
 
-   
+
     private int capacidad = 2; //Tamaño máximo del buffer
     private int count = 0;
 
     private String[] listaPasteles={"3 Leches", "Cheesecake", "Chocolate", "Nuez", "Moka"};
-     private Random random=new Random();
+    private Random random=new Random();
     private static LinkedList<String> pastelesDisponibles=new LinkedList<>();
 
     public synchronized void producir(int id) {
-        //Aqui va tu codigo 
+        //Aqui va tu codigo
         while(count == capacidad){
             try{
                 wait();
@@ -34,7 +34,7 @@ class Buffer {
 
     public synchronized void consumir(int id) {
 
-         while(count == 0){
+        while(count == 0){
             try{
                 wait();
             }catch(InterruptedException e){
@@ -50,3 +50,6 @@ class Buffer {
     }
 
 }
+
+
+
